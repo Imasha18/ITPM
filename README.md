@@ -1,83 +1,86 @@
-# ITPM
-Assignment 1
-Install requirements (beginner mode) 
+STEP 1: Prerequisite Installation - Node.js.
 
-We will do ONLY this part now:
- Install Node.js
- Check node and npm
+1.1 Determine whether or not Node.js is present.
 
-Nothing else yet.
+Open Command Prompt
 
- WHAT IS NODE.JS? (Very short, no theory)
+    Windows keypress -cmdpressEnter.
+Type:
 
-Playwright depends on node.js.
+bash
+node -v
 
-The Node.js is also installed with npm through which Playwright is installed.
+In case it is installed as version (v18 / v20)- Node.js - proceed to Step 2.
+In case you make a mistake - proceed to Step 1.2.
 
-Assessment of Node.js - assignment cannot be done in the case of their absence.
-Step1: Launch Terminal / Command Prompt.
+1.2 Install Node.js (LTS)
 
-Open VS Code terminal/system terminal.
-Ensure you are in your project folder:
+Go to: https://nodejs.org
+Click LTS (Recommended)
+   [?][?] Do NOT click "Current"
+Download the .msi file
+Double-click and install
+
+    Click Next - Next - Finish
+    Keep all default settings
+
+1.3 Verify Node.js and npm
+
+Close Command Prompt
+Open it again
+Type:
+
+bash
+node -v
+npm -v
+
+ In case both version numbers - Node.js and npm are up to date.
+
+STEP 2: Open Project Folder
+
+Open VS Code or Command Prompt
+Browse to your Playwright project folder:
 
 bash
 cd path/to/your/project
 
-Step 2: Install Dependencies
+[?][?] This is a directory which should include package.json.
 
-Ensure that your project contains a package.json (Playwright needs this).
-To install all the necessary packages, Run the following command:
+STEP 3: Add Dependencies to the Project.
+
+Install the necessary dependencies:
 
 bash
 npm install
 
-This installs Playwright and any other dependencies that your project requires.
-
-Install the browsers Chromium, Firefox, WebKit used by Playwright:
+Install Playwright browsers:
 
 bash
 npx playwright install
 
- All the dependencies and browsers were installed now.
+ Installation of dependencies and browsers has been complete.
 
-Step 3: Run All Tests
+STEP 4: Run Playwright Tests
 
-You would run all Playwright tests in your project by typing:
+4.1 Run all tests
 
 bash
 npx playwright test
 
- This shall run all test scripts in the tests folder (or wherever your .spec.js files are).
- Results will be seen in the terminal.
+ Runs all .spec.js files
+ Results shown in terminal
 
-Step 4: Run a Specific Test File
-
-To run one test file type:
+4.2 Enter a special test file (not mandatory)
 
 bash
-npx playwright test tests/example.spec.js.
+npx playwright test tests/example.spec.js
 
-substitute example.spec.js with test file name.
+STEP 5: View Test Report
 
-Step 5: View Test Reports
-
-A detailed HTML report can be displayed by Playwright after running tests:
+After tests finish:
 
 bash
 npx playwright show-report
 
- This will give us a browser with a graphical report on which tests were passed and which ones failed.
-
-Step 6: Optional Commands
-
- In order to execute tests in headed mode (to see the browser):
-
-bash
-npx playwright test --headed
-
- To run tests with debugging*:
-
-bash
-npx playwright test --debug
- 
-
+ Opens a browser report that is in HTML format.
+Passed test cases / failed test cases.
