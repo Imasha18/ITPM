@@ -578,3 +578,19 @@ test('Neg_Fun_0010 - Simple sentence conversion', async ({ page }) => {
   // Step 5: Validate at least one correct Sinhala word appears
   expect(pageText).toContain('මට tea බොන්න ඹැ..');
 });
+test('Pos_UI_0001 - Simple sentence conversion', async ({ page }) => {
+  // Step 1: Open the Swift Translator website
+  await page.goto('https://www.swifttranslator.com/');
+
+  // Step 2: Enter Singlish input
+  await page.fill('textarea', 'Password and Confirm Password same nam form eka submit venna one.');
+
+  // Step 3: Wait for conversion suggestions
+  await page.waitForTimeout(3000);
+
+  // Step 4: Read entire page content
+  const pageText = await page.textContent('body');
+
+  // Step 5: Validate at least one correct Sinhala word appears
+  expect(pageText).toContain('Password and Confirm Password same');
+});
