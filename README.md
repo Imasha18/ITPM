@@ -1,6 +1,6 @@
 # ITPM
 Assignment 1
-Install requirements (beginner mode) (STEP 2.1).
+Install requirements (beginner mode) 
 
 We will do ONLY this part now:
  Install Node.js
@@ -15,129 +15,69 @@ Playwright depends on node.js.
 The Node.js is also installed with npm through which Playwright is installed.
 
 Assessment of Node.js - assignment cannot be done in the case of their absence.
+Step1: Launch Terminal / Command Prompt.
 
- STEP 1: Determine whether node.js is installed or not.
-1[?] Open Command Prompt (Windows)
+Open VS Code terminal/system terminal.
+Ensure you are in your project folder:
 
-Do this slowly:
+bash
+cd path/to/your/project
 
-Press Windows key
+Step 2: Install Dependencies
 
-Type cmd
+Ensure that your project contains a package.json (Playwright needs this).
+To install all the necessary packages, Run the following command:
 
-Press Enter
+bash
+npm install
 
-A black window opens. This is known as Command Prompt.
+This installs Playwright and any other dependencies that your project requires.
 
-2[?] Type this and press Enter:
-node -v
+Install the browsers Chromium, Firefox, WebKit used by Playwright:
 
-What you might see:
- Case A (GOOD)
-v18.19.0
+bash
+npx playwright install
 
+ All the dependencies and browsers were installed now.
 
-or
+Step 3: Run All Tests
 
-v20.x.x
+You would run all Playwright tests in your project by typing:
 
+bash
+npx playwright test
 
- Node.js is already installed
- Go to STEP 3
+ This shall run all test scripts in the tests folder (or wherever your .spec.js files are).
+ Results will be seen in the terminal.
 
- Case B (NOT INSTALLED)
-node is not referred to as either a command or external or internal command.
+Step 4: Run a Specific Test File
 
+To run one test file type:
 
- Node.js is NOT installed
- Continue to STEP 2
+bash
+npx playwright test tests/example.spec.js.
 
-STEP 2: NODE.JS (LTS Version) INSTALL.
-1[?] Open this website:
+substitute example.spec.js with test file name.
 
- https://nodejs.org
+Step 5: View Test Reports
 
-2[?] You will see TWO buttons:
+A detailed HTML report can be displayed by Playwright after running tests:
 
- LTS (Recommended) - CLICK THIS
+bash
+npx playwright show-report
 
- Current
+ This will give us a browser with a graphical report on which tests were passed and which ones failed.
 
-[?][?] DO NOT choose "Current"
-Always choose LTS
+Step 6: Optional Commands
 
-3[?] Download & Install
+ In order to execute tests in headed mode (to see the browser):
 
-Click LTS
+bash
+npx playwright test --headed
 
-Download .msi file
+ To run tests with debugging*:
 
-Double-click it
+bash
+npx playwright test --debug
+ 
 
-Click:
-
-Next - Next - Next
-
- Keep ALL default settings
-
-Finish
-
-[?] Do NOT uncheck anything.
-
-STEP 3: Examine NODE and NPM (Very important)
-1[?] Close Command Prompt
-2[?] Reopen (once again: Windows - cmd)
-
-Now type one by one:
-
-node -v
-
-
-Press Enter
-Then type:
-
-npm -v
-
-
-Press Enter
-
- Correct output example:
-v18.19.0
-9.6.7
-
-
- Node.js installed
- npm installed
- You are READY for Playwright
-
- COMMON PROBLEMS & FIXES
- Error: Problem: node not recognized.
-
- Restart your computer
- Open cmd again
- Try node -v
-
- Problem: Version highly outdated (v10, v12)
-
- Uninstall old Node.js
- Install latest LTS
-
- STOP HERE (IMPORTANT)
-
-Do NOT go to Playwright yet.
-
- First, confirm this step.
-
- Next thing to do (and do not ignore).
-
-reply to one of the following, specifically:
-
-Success! node version is 3.0.0, node installed successfully.
-OR
-
-"I see some error" (and paste the error)
-
-On this being ascertained, I will conduct you to:
-
- STEP 2.3: Develop Playwright project (with nothing to start).
-(I do not have any phobia in code, I will demonstrate you all clicks and orders)
